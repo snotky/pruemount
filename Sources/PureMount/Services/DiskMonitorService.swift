@@ -259,6 +259,11 @@ public final class DiskMonitorService: ObservableObject {
 
     // MARK: - 1. 切換 NTFS 讀寫 / 唯讀模式
     public func toggleReadWriteMode(for volume: DiskVolume) async {
+        // 防呆守門員：若使用者事後關閉了完全取用磁碟權限，立即引導回授權頁面
+        if !PermissionService.shared.refreshFullDiskAccessStatus() {
+            PermissionService.shared.startPolling()
+            return
+        }
         // 先檢查是否擁有 Pro 權限或免費體驗額度（掛載成功後才真正綁定體驗次數）
         if volume.mountState != .mountedReadWrite {
             guard LicenseService.shared.checkProOrTrialAvailable(forVolumeID: volume.id) else {

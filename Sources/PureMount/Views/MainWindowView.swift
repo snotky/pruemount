@@ -5,6 +5,7 @@ public struct MainWindowView: View {
     @ObservedObject public var monitor: DiskMonitorService
     @ObservedObject public var settings: AppSettings
     @ObservedObject public var license = LicenseService.shared
+    @ObservedObject public var permissions = PermissionService.shared
 
     public init(monitor: DiskMonitorService, settings: AppSettings) {
         self.monitor = monitor
@@ -14,6 +15,19 @@ public struct MainWindowView: View {
     private var l10n: L10n { settings.l10n }
 
     public var body: some View {
+        Group {
+            if settings.distributionTrack == .direct && !permissions.hasFullDiskAccess {
+                OnboardingPermissionView(permissions: permissions, settings: settings)
+                    .transition(.opacity)
+            } else {
+                consoleView
+                    .transition(.opacity)
+            }
+        }
+        .animation(.easeInOut(duration: 0.25), value: permissions.hasFullDiskAccess)
+    }
+
+    private var consoleView: some View {
         ZStack(alignment: .bottom) {
             NavigationSplitView {
                 sidebarContent

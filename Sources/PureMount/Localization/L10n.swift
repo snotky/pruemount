@@ -468,4 +468,52 @@ public struct L10n {
     public var licenseTestModeHeader: String {
         t("授權狀態快速測試切換（開發預覽專用）", "License State Quick Switcher (Dev Preview)")
     }
+
+    // MARK: - 首次啟動權限引導閘門 (Full Disk Access Onboarding Gate)
+    public var onboardingTitle: String {
+        t("開始使用前，請授權 PureMount 存取外接磁碟", "Grant Full Disk Access to Continue")
+    }
+    public var onboardingSubtitle: String {
+        t("macOS 安全機制規定：必須開啟「完全取用磁碟」權限，PureMount 才能為您掛載可讀寫 NTFS 硬碟並清除隱藏垃圾檔（只需設定一次）。",
+          "macOS requires Full Disk Access so PureMount can mount NTFS drives in Read/Write mode and clean hidden junk files (one-time setup).")
+    }
+    public var onboardingDragCardTitle: String {
+        t("將此圖示直接拖入系統設定清單", "Drag this icon into System Settings")
+    }
+    public var onboardingDragCardHint: String {
+        t("按住下方 PureMount 圖示拖曳放進「完全取用磁碟」列表即可", "Drag and drop the PureMount icon below into the Full Disk Access list")
+    }
+    public var onboardingStep1Title: String {
+        t("1. 打開系統設定「完全取用磁碟」", "1. Open Full Disk Access Settings")
+    }
+    public var onboardingStep1Desc: String {
+        t("點擊右側藍色按鈕，系統會自動跳轉至對應的隱私權設定頁面。", "Click the button below to jump straight to the Privacy & Security pane.")
+    }
+    public var onboardingStep2Title: String {
+        t("2. 開啟 PureMount 開關（或拖入圖示）", "2. Enable PureMount (or Drag & Drop)")
+    }
+    public var onboardingStep2Desc: String {
+        t("若清單中已經有 PureMount，直接開啟右側開關；若沒有，將左側 PureMount 圖示拖進去即可。", "Toggle PureMount ON if listed, or drag the PureMount icon from the left into the list.")
+    }
+    public var onboardingStep3Title: String {
+        t("3. 自動感應並進入主控台", "3. Automatic Verification")
+    }
+    public var onboardingStep3Desc: String {
+        t("開關打開後，PureMount 會立即自動偵測並切換進入主畫面。", "PureMount checks automatically and enters the console as soon as access is granted.")
+    }
+    public var onboardingOpenSettingsButton: String {
+        t("打開系統設定（完全取用磁碟）", "Open Full Disk Access Settings")
+    }
+    public var onboardingRevealInFinder: String {
+        t("在 Finder 顯示 PureMount", "Show App in Finder")
+    }
+    public var onboardingWaitingStatus: String {
+        t("正在等待系統授權感應中（開通後將自動進入）…", "Waiting for Full Disk Access permission (will continue automatically)…")
+    }
+    public var onboardingGrantedStatus: String {
+        t("已取得完全取用磁碟權限，正在進入 PureMount…", "Full Disk Access granted! Opening PureMount…")
+    }
+    public var onboardingCheckNow: String {
+        t("立即重新檢查", "Check Again")
+    }
 }

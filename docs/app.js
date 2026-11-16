@@ -168,6 +168,29 @@
     });
   }
 
+  function applyConfigLinks() {
+    const cfg = window.PUREMOUNT_CONFIG || {};
+    if (cfg.dmgDownloadUrl) {
+      document.querySelectorAll('[data-link="dmg"]').forEach((el) => {
+        el.setAttribute("href", cfg.dmgDownloadUrl);
+      });
+    }
+    if (cfg.lifetimeCheckoutUrl && cfg.lifetimeCheckoutUrl !== "#pricing") {
+      document.querySelectorAll('[data-link="checkout-lifetime"]').forEach((el) => {
+        el.setAttribute("href", cfg.lifetimeCheckoutUrl);
+        el.setAttribute("target", "_blank");
+        el.setAttribute("rel", "noopener noreferrer");
+      });
+    }
+    if (cfg.annualCheckoutUrl && cfg.annualCheckoutUrl !== "#pricing") {
+      document.querySelectorAll('[data-link="checkout-annual"]').forEach((el) => {
+        el.setAttribute("href", cfg.annualCheckoutUrl);
+        el.setAttribute("target", "_blank");
+        el.setAttribute("rel", "noopener noreferrer");
+      });
+    }
+  }
+
   document.addEventListener("DOMContentLoaded", () => {
     const btn = document.getElementById("lang-switch");
     if (btn) {
@@ -177,5 +200,6 @@
       });
     }
     applyLang();
+    applyConfigLinks();
   });
 })();

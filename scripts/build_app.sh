@@ -24,6 +24,7 @@ SWIFT_FILES=(
     Sources/PureMount/Localization/L10n.swift
     Sources/PureMount/Models/DiskVolume.swift
     Sources/PureMount/Models/AppSettings.swift
+    Sources/PureMount/Services/PermissionService.swift
     Sources/PureMount/Services/LicenseService.swift
     Sources/PureMount/Services/SandboxBookmarkService.swift
     Sources/PureMount/Services/DiskUtilityService.swift
@@ -34,6 +35,7 @@ SWIFT_FILES=(
     Sources/PureMount/Services/SleepGuardService.swift
     Sources/PureMount/Services/DiskMonitorService.swift
     Sources/PureMount/Views/Components/StatusBadgeView.swift
+    Sources/PureMount/Views/OnboardingPermissionView.swift
     Sources/PureMount/Views/ProUpgradeSheetView.swift
     Sources/PureMount/Views/RenameVolumeSheetView.swift
     Sources/PureMount/Views/FormatVolumeWizardView.swift
