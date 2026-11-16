@@ -1,0 +1,641 @@
+/* PureMount Official Website — Minimalist Editorial Pure White Design */
+:root {
+  /* Force Pure White Editorial Theme across all OS modes */
+  color-scheme: only light;
+
+  --bg-page: #ffffff;
+  --bg-subtle: #f8fafc;
+  --bg-pill: #f1f5f9;
+  --surface-card: #ffffff;
+
+  --text-main: #0f172a;
+  --text-body: #334155;
+  --text-muted: #475569;
+
+  --brand-dark: #0f172a;
+  --brand-blue: #0066cc;
+  --brand-blue-hover: #0052a3;
+  --brand-teal: #0d746b;
+  --brand-amber: #b45309;
+  --brand-red: #b91c1c;
+
+  --border-card: #64748b;
+  --border-subtle: #94a3b8;
+  --shadow-soft: 0 18px 45px -12px rgba(15, 23, 42, 0.07);
+  --shadow-hover: 0 24px 55px -12px rgba(15, 23, 42, 0.12);
+
+  accent-color: var(--brand-blue);
+}
+
+@media (forced-colors: active) {
+  :root {
+    --bg-page: Canvas;
+    --bg-subtle: Canvas;
+    --surface-card: Canvas;
+    --text-main: CanvasText;
+    --text-body: CanvasText;
+    --text-muted: CanvasText;
+    --brand-dark: Highlight;
+    --brand-blue: Highlight;
+    --border-card: CanvasText;
+    --border-subtle: CanvasText;
+  }
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--bg-page);
+  color: var(--text-main);
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "PingFang TC", "Helvetica Neue", sans-serif;
+  background-color: var(--bg-page);
+  color: var(--text-main);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+.container {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Sticky Frosted White Navbar */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background-color: rgba(255, 255, 255, 0.88);
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 68px;
+  gap: 16px;
+}
+
+.brand-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: var(--text-main);
+  font-weight: 800;
+  font-size: 1.2rem;
+  letter-spacing: -0.02em;
+}
+
+.brand-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 9px;
+  background-color: var(--brand-dark);
+  color: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--brand-dark);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: var(--text-body);
+  font-size: 0.92rem;
+  font-weight: 600;
+}
+
+.nav-link:hover {
+  color: var(--brand-blue);
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Fashionable Minimalist Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 22px;
+  border-radius: 999px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  background-color: #ffffff;
+  color: var(--text-main);
+  border: 1.5px solid var(--border-card);
+  transition: transform 0.15s ease, background-color 0.15s ease;
+}
+
+.btn:hover {
+  background-color: var(--bg-subtle);
+  transform: translateY(-1px);
+}
+
+.btn-dark {
+  background-color: var(--brand-dark);
+  color: #ffffff;
+  border-color: var(--brand-dark);
+}
+
+.btn-dark:hover {
+  background-color: #1e293b;
+}
+
+.btn-blue {
+  background-color: var(--brand-blue);
+  color: #ffffff;
+  border-color: var(--brand-blue);
+}
+
+.btn-blue:hover {
+  background-color: var(--brand-blue-hover);
+}
+
+.btn-sm {
+  padding: 7px 14px;
+  font-size: 0.84rem;
+}
+
+/* Hero Section */
+.hero {
+  padding: 84px 0 64px;
+  text-align: center;
+  background: radial-gradient(circle at 50% 0%, #f1f5f9 0%, #ffffff 70%);
+}
+
+.eyebrow-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 16px;
+  border-radius: 999px;
+  background-color: #ffffff;
+  border: 1px solid var(--border-card);
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: var(--text-body);
+  margin-bottom: 24px;
+}
+
+.hero h1 {
+  font-size: clamp(2.25rem, 5vw, 3.6rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  max-width: 860px;
+  margin: 0 auto 20px;
+  color: var(--text-main);
+}
+
+.hero-lead {
+  font-size: clamp(1.05rem, 2vw, 1.25rem);
+  color: var(--text-body);
+  max-width: 680px;
+  margin: 0 auto 32px;
+}
+
+.hero-cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px;
+  margin-bottom: 16px;
+}
+
+.hero-trust-note {
+  font-size: 0.86rem;
+  color: var(--text-muted);
+  margin-bottom: 52px;
+}
+
+/* Pure White macOS Showcase Mockup */
+.macos-showcase {
+  max-width: 880px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  border: 1.5px solid var(--border-card);
+  border-radius: 20px;
+  box-shadow: var(--shadow-soft);
+  overflow: hidden;
+  text-align: left;
+}
+
+.macos-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 20px;
+  background-color: var(--bg-subtle);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.traffic-lights {
+  display: flex;
+  gap: 8px;
+}
+
+.traffic-dot {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  border: 1px solid var(--border-card);
+  background-color: #ffffff;
+}
+
+.macos-content {
+  display: grid;
+  grid-template-columns: 230px 1fr;
+}
+
+@media (max-width: 720px) {
+  .macos-content {
+    grid-template-columns: 1fr;
+  }
+}
+
+.macos-sidebar {
+  padding: 20px 16px;
+  background-color: var(--bg-subtle);
+  border-right: 1px solid var(--border-subtle);
+}
+
+.sidebar-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+  margin-bottom: 10px;
+}
+
+.sidebar-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 12px;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.sidebar-item.active {
+  background-color: #ffffff;
+  border: 1px solid var(--border-card);
+}
+
+.macos-detail {
+  padding: 28px;
+}
+
+.drive-card-mock {
+  border: 1px solid var(--border-subtle);
+  border-radius: 14px;
+  padding: 20px;
+  background-color: #ffffff;
+  margin-bottom: 16px;
+}
+
+.drive-card-top {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  border: 1px solid var(--border-card);
+  background-color: var(--bg-subtle);
+}
+
+.progress-track {
+  height: 10px;
+  border-radius: 999px;
+  background-color: var(--bg-pill);
+  border: 1px solid var(--border-subtle);
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.progress-fill {
+  height: 100%;
+  width: 38%;
+  background-color: var(--brand-blue);
+}
+
+/* Sections */
+.section {
+  padding: 84px 0;
+}
+
+.section-subtle {
+  background-color: var(--bg-subtle);
+  border-top: 1px solid var(--border-subtle);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.section-head {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 48px;
+}
+
+.section-head h2 {
+  font-size: clamp(1.75rem, 3.5vw, 2.4rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin-bottom: 12px;
+}
+
+.section-head p {
+  color: var(--text-body);
+  font-size: 1.05rem;
+}
+
+/* Pain Point vs Solution Comparison */
+.pain-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 24px;
+}
+
+.pain-card {
+  background-color: #ffffff;
+  border: 1.5px solid var(--border-card);
+  border-radius: 18px;
+  padding: 28px;
+}
+
+.pain-card.highlight {
+  border-width: 2px;
+  border-color: var(--brand-dark);
+  box-shadow: var(--shadow-soft);
+}
+
+.pain-card h3 {
+  font-size: 1.2rem;
+  font-weight: 800;
+  margin-bottom: 16px;
+}
+
+.pain-list {
+  list-style: none;
+  display: grid;
+  gap: 14px;
+}
+
+.pain-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.96rem;
+  color: var(--text-body);
+}
+
+/* Bento Features Grid */
+.bento-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+  gap: 20px;
+}
+
+.bento-card {
+  background-color: #ffffff;
+  border: 1.5px solid var(--border-card);
+  border-radius: 18px;
+  padding: 28px;
+  transition: box-shadow 0.2s ease;
+}
+
+.bento-card:hover {
+  box-shadow: var(--shadow-hover);
+}
+
+.bento-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 11px;
+  background-color: var(--bg-subtle);
+  border: 1px solid var(--border-card);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--brand-dark);
+  margin-bottom: 16px;
+}
+
+.bento-card h3 {
+  font-size: 1.18rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.bento-card p {
+  font-size: 0.95rem;
+  color: var(--text-body);
+}
+
+/* Responsive Competitor Comparison Table (modern-web-guidance compliant) */
+.table-wrapper {
+  overflow: auto;
+  max-inline-size: 100%;
+  max-block-size: min(560px, 80vh);
+  container-type: inline-size;
+  background-color: #ffffff;
+  border: 1.5px solid var(--border-card);
+  border-radius: 18px;
+}
+
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  text-align: left;
+  --label-2: "PureMount Pro";
+  --label-3: "Paragon NTFS";
+  --label-4: "Tuxera NTFS";
+}
+
+caption {
+  padding: 16px 22px;
+  font-weight: 700;
+  font-size: 1rem;
+  text-align: left;
+  background-color: var(--bg-subtle);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+thead {
+  position: sticky;
+  inset-block-start: 0;
+  z-index: 1;
+}
+
+th, td {
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--border-subtle);
+  font-size: 0.95rem;
+}
+
+thead th {
+  background-color: var(--bg-subtle);
+  font-weight: 800;
+  color: var(--text-main);
+}
+
+tbody th {
+  position: sticky;
+  inset-inline-start: 0;
+  background: #ffffff;
+  font-weight: 700;
+}
+
+@container (width < 600px) {
+  table, thead, tbody, tr, th, td {
+    display: block;
+  }
+
+  thead {
+    display: none;
+  }
+
+  tr {
+    margin-block-end: 1rem;
+    border-bottom: 2px solid var(--border-card);
+  }
+
+  tbody th {
+    position: sticky;
+    inset-block-start: 0;
+    z-index: 2;
+    background: var(--bg-subtle);
+  }
+
+  td:nth-child(2)::before {
+    content: var(--label-2) ": ";
+    font-weight: 700;
+  }
+  td:nth-child(3)::before {
+    content: var(--label-3) ": ";
+    font-weight: 700;
+  }
+  td:nth-child(4)::before {
+    content: var(--label-4) ": ";
+    font-weight: 700;
+  }
+}
+
+/* Conversion Pricing Cards */
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 24px;
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.pricing-card {
+  background-color: #ffffff;
+  border: 1.5px solid var(--border-card);
+  border-radius: 20px;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.pricing-card.featured {
+  border: 2.5px solid var(--brand-dark);
+  box-shadow: var(--shadow-soft);
+}
+
+.price-tag {
+  font-size: 2.75rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  margin: 14px 0 8px;
+}
+
+.price-features {
+  list-style: none;
+  display: grid;
+  gap: 10px;
+  margin: 20px 0 28px;
+  font-size: 0.94rem;
+  color: var(--text-body);
+}
+
+.price-features li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* FAQ Section */
+.faq-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 20px;
+  max-width: 920px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  background-color: #ffffff;
+  border: 1.5px solid var(--border-card);
+  border-radius: 14px;
+  padding: 22px;
+}
+
+.faq-item h3 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.faq-item p {
+  font-size: 0.93rem;
+  color: var(--text-body);
+}
+
+.site-footer {
+  padding: 44px 0;
+  border-top: 1px solid var(--border-subtle);
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}

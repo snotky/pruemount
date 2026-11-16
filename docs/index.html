@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="only light">
+  <title>PureMount — 純淨 NTFS 讀寫與外接硬碟管家 (macOS)</title>
+  <meta name="description" content="讓每一顆 Windows 硬碟在 Mac 上如原生般自由讀寫。結合 NTFS 高速讀寫、Windows 鎖定一鍵救援、退出自動清除 ._ 隱藏垃圾檔與筆電休眠保護。">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Sticky Frosted White Header -->
+  <header class="site-header">
+    <div class="container nav-inner">
+      <a href="#" class="brand-logo">
+        <span class="brand-icon" aria-hidden="true">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="4" width="18" height="16" rx="3"></rect>
+            <line x1="7" y1="15" x2="11" y2="15"></line>
+            <circle cx="16.5" cy="15" r="1.5" fill="currentColor"></circle>
+          </svg>
+        </span>
+        <span>PureMount</span>
+      </a>
+
+      <nav class="nav-links" aria-label="Primary">
+        <a href="#features" class="nav-link" data-i18n="navFeatures">核心優勢</a>
+        <a href="#compare" class="nav-link" data-i18n="navCompare">競品比較</a>
+        <a href="#pricing" class="nav-link" data-i18n="navPricing">方案價格</a>
+        <a href="#faq" class="nav-link" data-i18n="navFaq">常見問題</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button type="button" id="lang-switch" class="btn btn-sm" data-i18n="navLang">中 / EN</button>
+        <a href="../build/PureMount-1.0.0.dmg" download class="btn btn-dark btn-sm" data-i18n="navDownload">免費下載</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- 1. Hero Section (Pure Editorial White) -->
+    <section class="hero">
+      <div class="container">
+        <div class="eyebrow-badge">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+            <polyline points="20 6 9 17 4 12"></polyline>
+          </svg>
+          <span data-i18n="eyebrow">專為 macOS 13 / 14 / 15+ 打造 · Apple Silicon 與 Intel 原生架構</span>
+        </div>
+
+        <h1 data-i18n="heroTitle">讓每一顆 Windows 硬碟，在 Mac 上如原生般自由讀寫。</h1>
+        <p class="hero-lead" data-i18n="heroLead">
+          告別繁瑣設定與雜亂介面。PureMount 結合「NTFS 無感讀寫」、「Windows 鎖定一鍵救援」、「退出自動清除 ._ 隱藏垃圾檔」與「筆電休眠自動保護」，重新定義 Mac 外接硬碟體驗。
+        </p>
+
+        <div class="hero-cta-row">
+          <a href="../build/PureMount-1.0.0.dmg" download class="btn btn-dark">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+              <polyline points="7 10 12 15 17 10"></polyline>
+              <line x1="12" y1="15" x2="12" y2="3"></line>
+            </svg>
+            <span data-i18n="ctaDownload">免費下載 macOS 版 (.dmg)</span>
+          </a>
+
+          <a href="#pricing" class="btn btn-blue">
+            <span data-i18n="ctaBuyPro">立即購買終身買斷版 US$ 9.99</span>
+          </a>
+        </div>
+
+        <p class="hero-trust-note" data-i18n="heroTrust">
+          免註冊免費贈送 1 次完整讀寫與淨化體驗 · 確認您的硬碟 100% 相容再購買
+        </p>
+
+        <!-- Clean White macOS Window Mockup -->
+        <div class="macos-showcase" role="region" aria-label="PureMount Interface Preview">
+          <div class="macos-toolbar">
+            <div class="traffic-lights" aria-hidden="true">
+              <span class="traffic-dot"></span>
+              <span class="traffic-dot"></span>
+              <span class="traffic-dot"></span>
+            </div>
+            <strong>PureMount Console</strong>
+            <span>macOS Universal</span>
+          </div>
+
+          <div class="macos-content">
+            <aside class="macos-sidebar" aria-label="Drive List Mockup">
+              <div class="sidebar-label">External Drives</div>
+              <div class="sidebar-item active">
+                <span>Samsung T7 Shield</span>
+                <small>NTFS</small>
+              </div>
+              <div class="sidebar-item">
+                <span>WD My Passport</span>
+                <small>NTFS</small>
+              </div>
+              <div class="sidebar-item">
+                <span>SanDisk Extreme SD</span>
+                <small>exFAT</small>
+              </div>
+            </aside>
+
+            <div class="macos-detail">
+              <div class="drive-card-mock">
+                <div class="drive-card-top">
+                  <div>
+                    <strong style="font-size: 1.2rem;">Samsung T7 Shield</strong>
+                    <div style="font-size: 0.85rem; color: var(--text-muted);">USB 3.2 Gen 2 (10 Gbps) · /dev/disk4s1</div>
+                  </div>
+                  <span class="status-pill">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true">
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                    <span>NTFS · Read &amp; Write</span>
+                  </span>
+                </div>
+
+                <div class="progress-track" aria-hidden="true">
+                  <div class="progress-fill"></div>
+                </div>
+
+                <div style="display: flex; justify-content: space-between; font-size: 0.85rem; color: var(--text-body);">
+                  <span>760 GB used of 2.0 TB (1.24 TB available)</span>
+                  <span>Read 892 MB/s · Write 815 MB/s</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. Pain Points vs PureMount Solution (Before & After) -->
+    <section class="section section-subtle">
+      <div class="container">
+        <div class="section-head">
+          <h2 data-i18n="painSectionTitle">為什麼一般 Mac 用戶插上外接硬碟總是崩潰？</h2>
+          <p data-i18n="painSectionSub">我們把跨平台傳檔案最惱人的四大痛點，變成全自動的無感守護。</p>
+        </div>
+
+        <div class="pain-grid">
+          <div class="pain-card">
+            <h3 data-i18n="beforeTitle">過去沒有 PureMount 時的困擾</h3>
+            <ul class="pain-list">
+              <li>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true" style="flex-shrink: 0; margin-top: 4px;">
+                  <line x1="18" y1="6" x2="6" y2="18"></line>
+                  <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+                <span data-i18n="before1">插上 Windows 的 NTFS 硬碟，Mac 只能唯讀觀看，無法拉入或刪除任何檔案。</span>
+              </li>
+              <li>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true" style="flex-shrink: 0; margin-top: 4px;">
+                  <line x1="18" y1="6" x2="6" y2="18"></line>
+                  <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+                <span data-i18n="before2">隨身碟拔去插 Windows、電視或車載音響，裡面多出滿滿的 ._檔案 與 .DS_Store 亂碼垃圾。</span>
+              </li>
+              <li>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true" style="flex-shrink: 0; margin-top: 4px;">
+                  <line x1="18" y1="6" x2="6" y2="18"></line>
+                  <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+                <span data-i18n="before3">硬碟在 Windows 沒按安全退出，插上 Mac 直接被 Dirty Bit 鎖死連掛載都失敗。</span>
+              </li>
+              <li>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true" style="flex-shrink: 0; margin-top: 4px;">
+                  <line x1="18" y1="6" x2="6" y2="18"></line>
+                  <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+                <span data-i18n="before4">MacBook 闔上螢幕放進包包，醒來跳出刺眼的「磁碟未正常退出」警告甚至傷硬碟。</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="pain-card highlight">
+            <h3 data-i18n="afterTitle">使用 PureMount 後的純淨體驗</h3>
+            <ul class="pain-list">
+              <li>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true" style="flex-shrink: 0; margin-top: 4px;">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+                <span data-i18n="after1">插上 NTFS 硬碟自動轉為「可讀寫模式」，直接在 macOS Finder 新增、改名與管理檔案。</span>
+              </li>
+              <li>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true" style="flex-shrink: 0; margin-top: 4px;">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+                <span data-i18n="after2">點擊「純淨安全退出」，背景 0.5 秒自動清空所有 Mac 隱藏垃圾檔並釋放垃圾桶空間。</span>
+              </li>
+              <li>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true" style="flex-shrink: 0; margin-top: 4px;">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+                <span data-i18n="after3">自動偵測 Windows 快速啟動鎖定，免回 Windows 跑 chkdsk，在 Mac 一鍵修復日誌。</span>
+              </li>
+              <li>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true" style="flex-shrink: 0; margin-top: 4px;">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+                <span data-i18n="after4">內建「休眠自動保護」與「佔用程序強制釋放」，闔蓋自動安全卸載、喚醒自動重掛載。</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Six Core Advantages (Bento Grid) -->
+    <section id="features" class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2 data-i18n="bentoTitle">六大專業能力，收斂於極簡純白介面</h2>
+          <p data-i18n="bentoSub">平時不堆砌複雜按鈕，只有當硬碟需要處理時，才自動浮現對應的智慧解決方案。</p>
+        </div>
+
+        <div class="bento-grid">
+          <article class="bento-card">
+            <div class="bento-icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                <path d="M7 11V7a5 5 0 0 1 9.9-1"></path>
+              </svg>
+            </div>
+            <h3 data-i18n="b1Title">NTFS 原生級讀寫掛載</h3>
+            <p data-i18n="b1Desc">插上即用，無須進恢復模式降低系統安全性，與 macOS Finder 完美整合。</p>
+          </article>
+
+          <article class="bento-card">
+            <div class="bento-icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="3 6 5 6 21 6"></polyline>
+                <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"></path>
+              </svg>
+            </div>
+            <h3 data-i18n="b2Title">Clean &amp; Eject 幽靈檔淨化</h3>
+            <p data-i18n="b2Desc">退出前自動抹除 ._*、.DS_Store、.Spotlight-V100 與 .Trashes，保持跨平台硬碟絕對乾淨。</p>
+          </article>
+
+          <article class="bento-card">
+            <div class="bento-icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
+              </svg>
+            </div>
+            <h3 data-i18n="b3Title">Windows 鎖定 (Dirty Bit) 修復</h3>
+            <p data-i18n="b3Desc">針對未正常退出的 NTFS 硬碟提供一鍵日誌重置，當場解除唯讀鎖死狀態。</p>
+          </article>
+
+          <article class="bento-card">
+            <div class="bento-icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="15" y1="9" x2="9" y2="15"></line>
+                <line x1="9" y1="9" x2="15" y2="15"></line>
+              </svg>
+            </div>
+            <h3 data-i18n="b4Title">佔用程序偵測與強制釋放</h3>
+            <p data-i18n="b4Desc">退出被卡住時，直接列出正在咬住硬碟的 App 名稱，一鍵關閉佔用程式並安全退出。</p>
+          </article>
+
+          <article class="bento-card">
+            <div class="bento-icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+              </svg>
+            </div>
+            <h3 data-i18n="b5Title">筆電休眠保護 &amp; Spotlight 防發燙</h3>
+            <p data-i18n="b5Desc">等同直接省下一套 US$ 15 的 Jettison 休眠卸載軟體，還能禁止 Spotlight 索引防止 Mac 發燙。</p>
+          </article>
+
+          <article class="bento-card">
+            <div class="bento-icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+              </svg>
+            </div>
+            <h3 data-i18n="b6Title">雙平台白話防呆格式化與 3 秒測速</h3>
+            <p data-i18n="b6Desc">內建 3 秒讀寫測速驗證線材速度；格式化採用「白話用途二選一」與三道防呆鎖，絕不誤刪系統碟。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Competitor Comparison Table -->
+    <section id="compare" class="section section-subtle">
+      <div class="container">
+        <div class="section-head">
+          <h2 data-i18n="compareTitle">價格只有大廠的 1/3，功能卻更全面</h2>
+          <p data-i18n="compareSub">買一套 PureMount，同時擁有 NTFS 讀寫驅動 + CleanMyDrive 垃圾清理 + Jettison 休眠保護。</p>
+        </div>
+
+        <div tabindex="0" role="region" aria-labelledby="compare-table-caption" class="table-wrapper">
+          <table>
+            <caption id="compare-table-caption" data-i18n="tableCaption">主流 macOS 外接硬碟與 NTFS 工具規格比較表</caption>
+            <thead>
+              <tr>
+                <th data-i18n="colFeature">功能與比較項目</th>
+                <th>PureMount Pro</th>
+                <th>Paragon NTFS</th>
+                <th>Tuxera NTFS</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th data-i18n="rowPrice">終身買斷價格</th>
+                <td><strong>US$ 9.99 (最多 3 台 Mac)</strong></td>
+                <td>US$ 29.95 (單機)</td>
+                <td>US$ 15.00</td>
+              </tr>
+              <tr>
+                <th data-i18n="rowNtfs">NTFS 完整讀寫與 Dirty Bit 修復</th>
+                <td>Included</td>
+                <td>Included</td>
+                <td>Included</td>
+              </tr>
+              <tr>
+                <th data-i18n="rowClean">退出自動清除 ._ / .DS_Store 垃圾檔</th>
+                <td><strong>Included (Built-in)</strong></td>
+                <td>Not Included</td>
+                <td>Not Included</td>
+              </tr>
+              <tr>
+                <th data-i18n="rowSleep">筆電闔蓋休眠自動卸載保護</th>
+                <td><strong>Included (Built-in)</strong></td>
+                <td>Not Included</td>
+                <td>Not Included</td>
+              </tr>
+              <tr>
+                <th data-i18n="rowUnblock">佔用硬碟程序偵測與一鍵釋放</th>
+                <td><strong>Included (Built-in)</strong></td>
+                <td>Not Included</td>
+                <td>Not Included</td>
+              </tr>
+              <tr>
+                <th data-i18n="rowSpeed">3 秒硬碟讀寫測速 &amp; 防呆格式化</th>
+                <td><strong>Included (Built-in)</strong></td>
+                <td>Format Only</td>
+                <td>Format Only</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. High-Conversion Pricing Section -->
+    <section id="pricing" class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2 data-i18n="pricingTitle">簡單透明的定價，一次投資永久省心</h2>
+          <p data-i18n="pricingSub">您可以先免費下載測試您的硬碟，滿意後再選擇最適合您的授權方案。</p>
+        </div>
+
+        <div class="pricing-grid">
+          <!-- Lifetime Plan (Featured) -->
+          <article class="pricing-card featured">
+            <div>
+              <span class="eyebrow-badge" style="margin-bottom: 12px;" data-i18n="lifetimeBadge">最受歡迎 · 省下 70% 費用</span>
+              <h3 style="font-size: 1.4rem; font-weight: 800;" data-i18n="lifetimeTitle">終身買斷版 (Lifetime Pro)</h3>
+              <div class="price-tag">US$ 9.99</div>
+              <p style="font-size: 0.9rem; color: var(--text-muted);" data-i18n="lifetimeDesc">一次付費永久擁有，無任何續訂費用</p>
+
+              <ul class="price-features">
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                  <span data-i18n="lifetimeF1">無限次 NTFS 高速讀寫掛載與髒磁區修復</span>
+                </li>
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                  <span data-i18n="lifetimeF2">無限次退出自動清除 Mac 隱藏垃圾檔</span>
+                </li>
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                  <span data-i18n="lifetimeF3">完整包含休眠自動保護、佔用釋放與防呆格式化</span>
+                </li>
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                  <span data-i18n="lifetimeF4">同一個購買信箱可同時綁定最多 3 台 Mac 電腦</span>
+                </li>
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                  <span data-i18n="lifetimeF5">永久免費享有未來所有版本升級</span>
+                </li>
+              </ul>
+            </div>
+
+            <a href="#pricing" class="btn btn-dark" style="width: 100%;" data-i18n="lifetimeBtn">
+              立即購買終身買斷版 — US$ 9.99
+            </a>
+          </article>
+
+          <!-- Annual Plan -->
+          <article class="pricing-card">
+            <div>
+              <span class="eyebrow-badge" style="margin-bottom: 12px;" data-i18n="annualBadge">輕量入門方案</span>
+              <h3 style="font-size: 1.4rem; font-weight: 800;" data-i18n="annualTitle">年度授權版 (Annual Pro)</h3>
+              <div class="price-tag">US$ 2.99 <small style="font-size: 1rem; font-weight: 600;">/ yr</small></div>
+              <p style="font-size: 0.9rem; color: var(--text-muted);" data-i18n="annualDesc">約 NT$ 90 / 年（平均每月不到 NT$ 8），隨時可取消</p>
+
+              <ul class="price-features">
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                  <span data-i18n="annualF1">完整包含所有 Pro 專業版讀寫與純淨功能</span>
+                </li>
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                  <span data-i18n="annualF2">支援綁定最多 3 台 Mac 電腦</span>
+                </li>
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                  <span data-i18n="annualF3">訂閱期間享有所有版本更新與技術支援</span>
+                </li>
+              </ul>
+            </div>
+
+            <a href="#pricing" class="btn" style="width: 100%;" data-i18n="annualBtn">
+              訂閱年度方案 — US$ 2.99 / 年
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. FAQ Section -->
+    <section id="faq" class="section section-subtle">
+      <div class="container">
+        <div class="section-head">
+          <h2 data-i18n="faqTitle">購買前常見問題</h2>
+        </div>
+
+        <div class="faq-grid">
+          <article class="faq-item">
+            <h3 data-i18n="faq1Q">我的硬碟一定能用嗎？可以先試用再買嗎？</h3>
+            <p data-i18n="faq1A">
+              完全可以！點擊上方免費下載安裝後，免註冊即可享有「1 次有始有終的完整體驗」（從啟用 NTFS 讀寫到純淨安全退出），親眼確認您的硬碟 100% 順暢讀寫再決定是否升級。
+            </p>
+          </article>
+
+          <article class="faq-item">
+            <h3 data-i18n="faq2Q">支援最新的 Apple Silicon (M1 / M2 / M3 / M4) 與舊款 Intel Mac 嗎？</h3>
+            <p data-i18n="faq2A">
+              支援！PureMount 採用 Universal 原生雙架構編譯，支援 macOS 13 Ventura、macOS 14 Sonoma 與最新 macOS 15 Sequoia 以上的所有 Mac 機型。
+            </p>
+          </article>
+
+          <article class="faq-item">
+            <h3 data-i18n="faq3Q">以後換新 Mac 電腦或重灌系統，需要重新購買嗎？</h3>
+            <p data-i18n="faq3A">
+              不需要！您的授權綁定於您的購買信箱（官網版最多可綁 3 台 Mac；App Store 版直接跟隨您的 Apple ID），換新電腦只需輸入信箱與授權碼即可 1 秒恢復 Pro 權限。
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>Copyright &copy; 2026 PureMount. Minimalist NTFS &amp; External Drive Manager for macOS.</p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

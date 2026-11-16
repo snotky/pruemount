@@ -1,0 +1,17 @@
+# macOS 系統與暫存檔
+.DS_Store
+*.swp
+*.swo
+*~
+
+# Swift Package Manager 與編譯產物
+.build/
+build/
+*.dmg
+*.app
+*.xcarchive
+
+# Xcode 使用者狀態
+xcuserdata/
+*.xcuserdatad/
+.swiftpm/
