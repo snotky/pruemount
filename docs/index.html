@@ -9,12 +9,12 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <!-- Sticky Frosted White Header -->
+  <!-- Apple-style Frosted Minimalist Header -->
   <header class="site-header">
     <div class="container nav-inner">
       <a href="#" class="brand-logo">
         <span class="brand-icon" aria-hidden="true">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
             <rect x="3" y="4" width="18" height="16" rx="3"></rect>
             <line x1="7" y1="15" x2="11" y2="15"></line>
             <circle cx="16.5" cy="15" r="1.5" fill="currentColor"></circle>
@@ -32,21 +32,16 @@
 
       <div class="nav-actions">
         <button type="button" id="lang-switch" class="btn btn-sm" data-i18n="navLang">中 / EN</button>
-        <a href="../build/PureMount-1.0.0.dmg" download data-link="dmg" class="btn btn-dark btn-sm" data-i18n="navDownload">免費下載</a>
+        <a href="../build/PureMount-1.0.0.dmg" download data-link="dmg" class="btn btn-blue btn-sm" data-i18n="navDownload">免費下載</a>
       </div>
     </div>
   </header>
 
   <main>
-    <!-- 1. Hero Section (Pure Editorial White) -->
+    <!-- 1. Hero Section -->
     <section class="hero">
       <div class="container">
-        <div class="eyebrow-badge">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
-            <polyline points="20 6 9 17 4 12"></polyline>
-          </svg>
-          <span data-i18n="eyebrow">專為 macOS 13 / 14 / 15+ 打造 · Apple Silicon 與 Intel 原生架構</span>
-        </div>
+        <span class="eyebrow-text" data-i18n="eyebrow">專為 macOS 13 / 14 / 15+ 打造 · Apple Silicon 與 Intel 原生架構</span>
 
         <h1 data-i18n="heroTitle">讓每一顆 Windows 硬碟，在 Mac 上如原生般自由讀寫。</h1>
         <p class="hero-lead" data-i18n="heroLead">
@@ -54,8 +49,8 @@
         </p>
 
         <div class="hero-cta-row">
-          <a href="../build/PureMount-1.0.0.dmg" download data-link="dmg" class="btn btn-dark">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true">
+          <a href="../build/PureMount-1.0.0.dmg" download data-link="dmg" class="btn btn-blue">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true">
               <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
               <polyline points="7 10 12 15 17 10"></polyline>
               <line x1="12" y1="15" x2="12" y2="3"></line>
@@ -63,8 +58,9 @@
             <span data-i18n="ctaDownload">免費下載 macOS 版 (.dmg)</span>
           </a>
 
-          <a href="#pricing" data-link="checkout-lifetime" class="btn btn-blue">
+          <a href="#pricing" data-link="checkout-lifetime" class="btn btn-ghost">
             <span data-i18n="ctaBuyPro">立即購買終身買斷版 US$ 9.99</span>
+            <span aria-hidden="true">&rsaquo;</span>
           </a>
         </div>
 
@@ -72,16 +68,16 @@
           免註冊免費贈送 1 次完整讀寫與淨化體驗 · 確認您的硬碟 100% 相容再購買
         </p>
 
-        <!-- Clean White macOS Window Mockup -->
+        <!-- Clean Borderless macOS App Mockup -->
         <div class="macos-showcase" role="region" aria-label="PureMount Interface Preview">
           <div class="macos-toolbar">
             <div class="traffic-lights" aria-hidden="true">
-              <span class="traffic-dot"></span>
-              <span class="traffic-dot"></span>
-              <span class="traffic-dot"></span>
+              <span class="traffic-dot dot-red"></span>
+              <span class="traffic-dot dot-yellow"></span>
+              <span class="traffic-dot dot-green"></span>
             </div>
-            <strong>PureMount Console</strong>
-            <span>macOS Universal</span>
+            <span class="toolbar-title">PureMount Console</span>
+            <span class="toolbar-badge">Pro · Universal</span>
           </div>
 
           <div class="macos-content">
@@ -104,14 +100,20 @@
             <div class="macos-detail">
               <div class="drive-card-mock">
                 <div class="drive-card-top">
-                  <div>
-                    <strong style="font-size: 1.2rem;">Samsung T7 Shield</strong>
-                    <div style="font-size: 0.85rem; color: var(--text-muted);">USB 3.2 Gen 2 (10 Gbps) · /dev/disk4s1</div>
+                  <div style="display: flex; align-items: center; gap: 14px;">
+                    <div class="drive-icon-box" aria-hidden="true">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="2" y="6" width="20" height="12" rx="3"></rect>
+                        <circle cx="17" cy="12" r="1.5" fill="currentColor"></circle>
+                      </svg>
+                    </div>
+                    <div>
+                      <strong style="font-size: 1.15rem; display: block;">Samsung T7 Shield</strong>
+                      <span style="font-size: 0.82rem; color: var(--ink-muted);">USB 3.2 Gen 2 (10 Gbps) · /dev/disk4s1</span>
+                    </div>
                   </div>
                   <span class="status-pill">
-                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true">
-                      <polyline points="20 6 9 17 4 12"></polyline>
-                    </svg>
+                    <span class="status-dot" aria-hidden="true"></span>
                     <span>NTFS · Read &amp; Write</span>
                   </span>
                 </div>
@@ -120,9 +122,14 @@
                   <div class="progress-fill"></div>
                 </div>
 
-                <div style="display: flex; justify-content: space-between; font-size: 0.85rem; color: var(--text-body);">
+                <div style="display: flex; justify-content: space-between; font-size: 0.82rem; color: var(--ink-muted);">
                   <span>760 GB used of 2.0 TB (1.24 TB available)</span>
                   <span>Read 892 MB/s · Write 815 MB/s</span>
+                </div>
+
+                <div class="mock-actions">
+                  <span class="mock-pill-btn">Open in Finder</span>
+                  <span class="mock-pill-btn teal">Clean &amp; Eject</span>
                 </div>
               </div>
             </div>
@@ -131,8 +138,8 @@
       </div>
     </section>
 
-    <!-- 2. Pain Points vs PureMount Solution (Before & After) -->
-    <section class="section section-subtle">
+    <!-- 2. Pain Points vs PureMount Solution -->
+    <section class="section section-apple-gray">
       <div class="container">
         <div class="section-head">
           <h2 data-i18n="painSectionTitle">為什麼一般 Mac 用戶插上外接硬碟總是崩潰？</h2>
@@ -144,28 +151,28 @@
             <h3 data-i18n="beforeTitle">過去沒有 PureMount 時的困擾</h3>
             <ul class="pain-list">
               <li>
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true" style="flex-shrink: 0; margin-top: 4px;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#86868b" stroke-width="2" aria-hidden="true" style="flex-shrink: 0; margin-top: 3px;">
                   <line x1="18" y1="6" x2="6" y2="18"></line>
                   <line x1="6" y1="6" x2="18" y2="18"></line>
                 </svg>
                 <span data-i18n="before1">插上 Windows 的 NTFS 硬碟，Mac 只能唯讀觀看，無法拉入或刪除任何檔案。</span>
               </li>
               <li>
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true" style="flex-shrink: 0; margin-top: 4px;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#86868b" stroke-width="2" aria-hidden="true" style="flex-shrink: 0; margin-top: 3px;">
                   <line x1="18" y1="6" x2="6" y2="18"></line>
                   <line x1="6" y1="6" x2="18" y2="18"></line>
                 </svg>
                 <span data-i18n="before2">隨身碟拔去插 Windows、電視或車載音響，裡面多出滿滿的 ._檔案 與 .DS_Store 亂碼垃圾。</span>
               </li>
               <li>
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true" style="flex-shrink: 0; margin-top: 4px;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#86868b" stroke-width="2" aria-hidden="true" style="flex-shrink: 0; margin-top: 3px;">
                   <line x1="18" y1="6" x2="6" y2="18"></line>
                   <line x1="6" y1="6" x2="18" y2="18"></line>
                 </svg>
                 <span data-i18n="before3">硬碟在 Windows 沒按安全退出，插上 Mac 直接被 Dirty Bit 鎖死連掛載都失敗。</span>
               </li>
               <li>
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true" style="flex-shrink: 0; margin-top: 4px;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#86868b" stroke-width="2" aria-hidden="true" style="flex-shrink: 0; margin-top: 3px;">
                   <line x1="18" y1="6" x2="6" y2="18"></line>
                   <line x1="6" y1="6" x2="18" y2="18"></line>
                 </svg>
@@ -178,25 +185,25 @@
             <h3 data-i18n="afterTitle">使用 PureMount 後的純淨體驗</h3>
             <ul class="pain-list">
               <li>
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true" style="flex-shrink: 0; margin-top: 4px;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0071e3" stroke-width="2.5" aria-hidden="true" style="flex-shrink: 0; margin-top: 3px;">
                   <polyline points="20 6 9 17 4 12"></polyline>
                 </svg>
                 <span data-i18n="after1">插上 NTFS 硬碟自動轉為「可讀寫模式」，直接在 macOS Finder 新增、改名與管理檔案。</span>
               </li>
               <li>
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true" style="flex-shrink: 0; margin-top: 4px;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0071e3" stroke-width="2.5" aria-hidden="true" style="flex-shrink: 0; margin-top: 3px;">
                   <polyline points="20 6 9 17 4 12"></polyline>
                 </svg>
                 <span data-i18n="after2">點擊「純淨安全退出」，背景 0.5 秒自動清空所有 Mac 隱藏垃圾檔並釋放垃圾桶空間。</span>
               </li>
               <li>
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true" style="flex-shrink: 0; margin-top: 4px;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0071e3" stroke-width="2.5" aria-hidden="true" style="flex-shrink: 0; margin-top: 3px;">
                   <polyline points="20 6 9 17 4 12"></polyline>
                 </svg>
                 <span data-i18n="after3">自動偵測 Windows 快速啟動鎖定，免回 Windows 跑 chkdsk，在 Mac 一鍵修復日誌。</span>
               </li>
               <li>
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true" style="flex-shrink: 0; margin-top: 4px;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0071e3" stroke-width="2.5" aria-hidden="true" style="flex-shrink: 0; margin-top: 3px;">
                   <polyline points="20 6 9 17 4 12"></polyline>
                 </svg>
                 <span data-i18n="after4">內建「休眠自動保護」與「佔用程序強制釋放」，闔蓋自動安全卸載、喚醒自動重掛載。</span>
@@ -207,7 +214,7 @@
       </div>
     </section>
 
-    <!-- 3. Six Core Advantages (Bento Grid) -->
+    <!-- 3. Asymmetric Apple Bento Grid -->
     <section id="features" class="section">
       <div class="container">
         <div class="section-head">
@@ -216,7 +223,7 @@
         </div>
 
         <div class="bento-grid">
-          <article class="bento-card">
+          <article class="bento-card wide">
             <div class="bento-icon" aria-hidden="true">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
@@ -227,7 +234,7 @@
             <p data-i18n="b1Desc">插上即用，無須進恢復模式降低系統安全性，與 macOS Finder 完美整合。</p>
           </article>
 
-          <article class="bento-card">
+          <article class="bento-card wide">
             <div class="bento-icon" aria-hidden="true">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <polyline points="3 6 5 6 21 6"></polyline>
@@ -269,22 +276,12 @@
             <h3 data-i18n="b5Title">筆電休眠保護 &amp; Spotlight 防發燙</h3>
             <p data-i18n="b5Desc">等同直接省下一套 US$ 15 的 Jettison 休眠卸載軟體，還能禁止 Spotlight 索引防止 Mac 發燙。</p>
           </article>
-
-          <article class="bento-card">
-            <div class="bento-icon" aria-hidden="true">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
-              </svg>
-            </div>
-            <h3 data-i18n="b6Title">雙平台白話防呆格式化與 3 秒測速</h3>
-            <p data-i18n="b6Desc">內建 3 秒讀寫測速驗證線材速度；格式化採用「白話用途二選一」與三道防呆鎖，絕不誤刪系統碟。</p>
-          </article>
         </div>
       </div>
     </section>
 
     <!-- 4. Competitor Comparison Table -->
-    <section id="compare" class="section section-subtle">
+    <section id="compare" class="section section-apple-gray">
       <div class="container">
         <div class="section-head">
           <h2 data-i18n="compareTitle">價格只有大廠的 1/3，功能卻更全面</h2>
@@ -345,7 +342,7 @@
       </div>
     </section>
 
-    <!-- 5. High-Conversion Pricing Section -->
+    <!-- 5. Pricing Section -->
     <section id="pricing" class="section">
       <div class="container">
         <div class="section-head">
@@ -354,13 +351,13 @@
         </div>
 
         <div class="pricing-grid">
-          <!-- Lifetime Plan (Featured) -->
+          <!-- Lifetime Plan (Dark Anchor Card) -->
           <article class="pricing-card featured">
             <div>
-              <span class="eyebrow-badge" style="margin-bottom: 12px;" data-i18n="lifetimeBadge">最受歡迎 · 省下 70% 費用</span>
-              <h3 style="font-size: 1.4rem; font-weight: 800;" data-i18n="lifetimeTitle">終身買斷版 (Lifetime Pro)</h3>
+              <span class="plan-pill" data-i18n="lifetimeBadge">最受歡迎 · 省下 70% 費用</span>
+              <h3 style="font-size: 1.45rem; font-weight: 700;" data-i18n="lifetimeTitle">終身買斷版 (Lifetime Pro)</h3>
               <div class="price-tag">US$ 9.99</div>
-              <p style="font-size: 0.9rem; color: var(--text-muted);" data-i18n="lifetimeDesc">一次付費永久擁有，無任何續訂費用</p>
+              <p class="price-sub" data-i18n="lifetimeDesc">一次付費永久擁有，無任何續訂費用</p>
 
               <ul class="price-features">
                 <li>
@@ -396,7 +393,7 @@
               </ul>
             </div>
 
-            <a href="#pricing" data-link="checkout-lifetime" class="btn btn-dark" style="width: 100%;" data-i18n="lifetimeBtn">
+            <a href="#pricing" data-link="checkout-lifetime" class="btn btn-blue" style="width: 100%;" data-i18n="lifetimeBtn">
               立即購買終身買斷版 — US$ 9.99
             </a>
           </article>
@@ -404,10 +401,10 @@
           <!-- Annual Plan -->
           <article class="pricing-card">
             <div>
-              <span class="eyebrow-badge" style="margin-bottom: 12px;" data-i18n="annualBadge">輕量入門方案</span>
-              <h3 style="font-size: 1.4rem; font-weight: 800;" data-i18n="annualTitle">年度授權版 (Annual Pro)</h3>
+              <span class="plan-pill" data-i18n="annualBadge">輕量入門方案</span>
+              <h3 style="font-size: 1.45rem; font-weight: 700;" data-i18n="annualTitle">年度授權版 (Annual Pro)</h3>
               <div class="price-tag">US$ 2.99 <small style="font-size: 1rem; font-weight: 600;">/ yr</small></div>
-              <p style="font-size: 0.9rem; color: var(--text-muted);" data-i18n="annualDesc">約 NT$ 90 / 年（平均每月不到 NT$ 8），隨時可取消</p>
+              <p class="price-sub" data-i18n="annualDesc">約 NT$ 90 / 年（平均每月不到 NT$ 8），隨時可取消</p>
 
               <ul class="price-features">
                 <li>
@@ -431,7 +428,7 @@
               </ul>
             </div>
 
-            <a href="#pricing" data-link="checkout-annual" class="btn" style="width: 100%;" data-i18n="annualBtn">
+            <a href="#pricing" data-link="checkout-annual" class="btn btn-dark" style="width: 100%;" data-i18n="annualBtn">
               訂閱年度方案 — US$ 2.99 / 年
             </a>
           </article>
@@ -439,34 +436,34 @@
       </div>
     </section>
 
-    <!-- 6. FAQ Section -->
-    <section id="faq" class="section section-subtle">
+    <!-- 6. Clean Accordion FAQ -->
+    <section id="faq" class="section section-apple-gray">
       <div class="container">
         <div class="section-head">
           <h2 data-i18n="faqTitle">購買前常見問題</h2>
         </div>
 
-        <div class="faq-grid">
-          <article class="faq-item">
-            <h3 data-i18n="faq1Q">我的硬碟一定能用嗎？可以先試用再買嗎？</h3>
+        <div class="faq-list">
+          <details class="faq-details" open>
+            <summary data-i18n="faq1Q">我的硬碟一定能用嗎？可以先試用再買嗎？</summary>
             <p data-i18n="faq1A">
               完全可以！點擊上方免費下載安裝後，免註冊即可享有「1 次有始有終的完整體驗」（從啟用 NTFS 讀寫到純淨安全退出），親眼確認您的硬碟 100% 順暢讀寫再決定是否升級。
             </p>
-          </article>
+          </details>
 
-          <article class="faq-item">
-            <h3 data-i18n="faq2Q">支援最新的 Apple Silicon (M1 / M2 / M3 / M4) 與舊款 Intel Mac 嗎？</h3>
+          <details class="faq-details">
+            <summary data-i18n="faq2Q">支援最新的 Apple Silicon (M1 / M2 / M3 / M4) 與舊款 Intel Mac 嗎？</summary>
             <p data-i18n="faq2A">
               支援！PureMount 採用 Universal 原生雙架構編譯，支援 macOS 13 Ventura、macOS 14 Sonoma 與最新 macOS 15 Sequoia 以上的所有 Mac 機型。
             </p>
-          </article>
+          </details>
 
-          <article class="faq-item">
-            <h3 data-i18n="faq3Q">以後換新 Mac 電腦或重灌系統，需要重新購買嗎？</h3>
+          <details class="faq-details">
+            <summary data-i18n="faq3Q">以後換新 Mac 電腦或重灌系統，需要重新購買嗎？</summary>
             <p data-i18n="faq3A">
               不需要！您的授權綁定於您的購買信箱（官網版最多可綁 3 台 Mac；App Store 版直接跟隨您的 Apple ID），換新電腦只需輸入信箱與授權碼即可 1 秒恢復 Pro 權限。
             </p>
-          </article>
+          </details>
         </div>
       </div>
     </section>
@@ -474,7 +471,7 @@
 
   <footer class="site-footer">
     <div class="container">
-      <p>Copyright &copy; 2026 PureMount. Minimalist NTFS &amp; External Drive Manager for macOS.</p>
+      <p>Copyright &copy; 2026 PureMount. Built for macOS 13.0+.</p>
     </div>
   </footer>
 
