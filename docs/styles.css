@@ -979,3 +979,141 @@ tbody th {
   font-size: 0.88rem;
   color: var(--ink-muted);
 }
+
+/* 官網視覺：以 macOS 產品預覽作為首屏焦點 */
+@media (forced-colors: none) {
+  :root {
+    --ink-primary: #102039;
+    --ink-secondary: #40536b;
+    --brand-blue: #075ecd;
+    --brand-blue-hover: #064fae;
+    --bg-soft: #f5f8fc;
+    --border-soft: #dce5f0;
+  }
+
+  .hero {
+    background:
+      radial-gradient(ellipse at 22% 10%, #dbeaff 0%, transparent 47%),
+      radial-gradient(ellipse at 82% 29%, #d9f6f0 0%, transparent 47%),
+      linear-gradient(180deg, #f5faff, #fff 92%);
+  }
+
+  .hero-app-icon {
+    border: 1px solid #ffffff80;
+    box-shadow: inset 0 1px 0 #ffffff70, 0 16px 34px #145ab84d;
+  }
+
+  .hero-version-pill {
+    background: #ffffffbe;
+    border: 1px solid var(--border-soft);
+  }
+
+  .btn-blue {
+    background: var(--brand-blue);
+    box-shadow: 0 6px 16px #075ecd35;
+  }
+
+  .btn-blue:hover {
+    background: var(--brand-blue-hover);
+  }
+
+  .macos-showcase {
+    border-color: #cad9eb;
+    box-shadow: 0 0 0 8px #ffffff90, 0 34px 72px -24px #264f825c;
+  }
+
+  .macos-toolbar {
+    background: linear-gradient(180deg, #fff, #edf3fa);
+  }
+
+  .showcase-visual {
+    background: linear-gradient(145deg, #e5efff, #eff7ff 55%, #dcf5ef);
+  }
+
+  .utility-card,
+  .guarantee-card {
+    background: #fff;
+  }
+
+  .pricing-card.featured {
+    background: linear-gradient(155deg, #eaf3ff, #fff 65%);
+    box-shadow: 0 18px 48px -24px #075ecd70;
+  }
+}
+
+.hero {
+  padding: clamp(44px, 7vw, 90px) 0 clamp(48px, 7vw, 88px);
+}
+
+.hero h1 {
+  max-width: 850px;
+  font-size: clamp(2rem, 5.3vw, 4rem);
+  line-height: 1.12;
+  text-wrap: balance;
+}
+
+.hero-lead {
+  max-width: 620px;
+  font-size: clamp(1rem, 1.6vw, 1.15rem);
+  line-height: 1.75;
+}
+
+.hero-cta-row .btn {
+  min-height: 48px;
+}
+
+.section {
+  padding: clamp(54px, 8vw, 100px) 0;
+}
+
+.section-head h2,
+.showcase-text h3 {
+  line-height: 1.2;
+  text-wrap: balance;
+}
+
+.pricing-grid {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+}
+
+.pricing-card {
+  padding: clamp(22px, 4vw, 36px);
+}
+
+:where(a, button, summary):focus-visible {
+  outline: 2px solid var(--brand-blue);
+  outline-offset: 4px;
+}
+
+@media (max-width: 460px) {
+  .container {
+    padding-inline: 16px;
+  }
+
+  .pure-series-tag {
+    display: none;
+  }
+
+  .hero-cta-row {
+    flex-direction: column;
+    max-width: 330px;
+    margin-inline: auto;
+  }
+
+  .hero-cta-row .btn {
+    width: 100%;
+    white-space: normal;
+  }
+
+  .macos-toolbar {
+    padding-inline: 10px;
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
