@@ -1,4 +1,5 @@
 import SwiftUI
+import AppKit
 
 /// PureMount 正式版主控台視窗（左側極簡磁碟清單 + 右側智慧儀表板）
 public struct MainWindowView: View {
@@ -13,6 +14,11 @@ public struct MainWindowView: View {
     }
 
     private var l10n: L10n { settings.l10n }
+
+    private var appVersionText: String {
+        let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "1.0"
+        return "v\(version)"
+    }
 
     public var body: some View {
         Group {
@@ -185,7 +191,43 @@ public struct MainWindowView: View {
                 }
                 .padding(.vertical, 10)
             }
+
+            Divider()
+            sidebarBrandFooter
         }
+    }
+
+    private var sidebarBrandFooter: some View {
+        HStack(spacing: 9) {
+            Image(nsImage: NSApp.applicationIconImage)
+                .resizable()
+                .interpolation(.high)
+                .frame(width: 24, height: 24)
+                .clipShape(RoundedRectangle(cornerRadius: 6, style: .continuous))
+                .overlay(
+                    RoundedRectangle(cornerRadius: 6, style: .continuous)
+                        .strokeBorder(Color.primary.opacity(0.1), lineWidth: 0.5)
+                )
+
+            VStack(alignment: .leading, spacing: 1) {
+                HStack(spacing: 5) {
+                    Text("PureMount")
+                        .font(.system(size: 12.5, weight: .bold, design: .rounded))
+                        .foregroundStyle(.primary)
+                    Text(appVersionText)
+                        .font(.system(size: 10, weight: .medium, design: .monospaced))
+                        .foregroundStyle(.secondary)
+                }
+                Text("PureApps · Turbo Integration")
+                    .font(.system(size: 10))
+                    .foregroundStyle(.tertiary)
+                    .lineLimit(1)
+            }
+
+            Spacer()
+        }
+        .padding(.horizontal, 14)
+        .padding(.vertical, 10)
     }
 
     private func sidebarRow(for volume: DiskVolume) -> some View {
@@ -253,12 +295,24 @@ public struct MainWindowView: View {
 
     private var emptyStateView: some View {
         VStack(spacing: 14) {
-            Image(systemName: "externaldrive.badge.plus")
-                .font(.system(size: 46, weight: .light))
-                .foregroundStyle(.secondary)
+            Image(nsImage: NSApp.applicationIconImage)
+                .resizable()
+                .interpolation(.high)
+                .frame(width: 76, height: 76)
+                .clipShape(RoundedRectangle(cornerRadius: 18, style: .continuous))
+                .shadow(color: .black.opacity(0.14), radius: 12, x: 0, y: 5)
+                .overlay(
+                    RoundedRectangle(cornerRadius: 18, style: .continuous)
+                        .strokeBorder(Color.primary.opacity(0.08), lineWidth: 1)
+                )
 
-            Text(l10n.noExternalDrivesTitle)
-                .font(.system(size: 18, weight: .bold))
+            VStack(spacing: 4) {
+                Text("PureMount")
+                    .font(.system(size: 22, weight: .bold, design: .rounded))
+                Text(l10n.noExternalDrivesTitle)
+                    .font(.system(size: 14, weight: .semibold))
+                    .foregroundStyle(.secondary)
+            }
 
             Text(settings.language == .zhHant
                  ? "請將 NTFS、exFAT 或 USB 外接硬碟插入您的 Mac，系統將自動偵測並顯示於此。"
