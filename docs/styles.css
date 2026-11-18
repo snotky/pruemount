@@ -756,6 +756,190 @@ tbody th {
   border-radius: 999px;
 }
 
+/* 1. 4-Column Hardware & Apple Trust Strip */
+.apple-trust-grid {
+  max-width: 880px;
+  margin: 44px auto 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+@media (max-width: 720px) {
+  .apple-trust-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.apple-trust-card {
+  background-color: #ffffff;
+  border: 1px solid var(--border-soft);
+  border-radius: 16px;
+  padding: 18px 14px;
+  text-align: center;
+  box-shadow: 0 6px 20px -8px rgba(20, 25, 35, 0.05);
+}
+
+.trust-badge-icon {
+  width: 44px;
+  height: 44px;
+  margin: 0 auto 10px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 0.9rem;
+}
+
+.trust-badge-icon.apple { background: linear-gradient(135deg, #1d1d1f, #434c5e); color: #ffffff; }
+.trust-badge-icon.os { background: linear-gradient(135deg, #0a7aff, #38bdf8); color: #ffffff; }
+.trust-badge-icon.chip { background: linear-gradient(135deg, #0f172a, #0ea5a0); color: #ffffff; }
+.trust-badge-icon.safe { background: linear-gradient(135deg, #10b981, #059669); color: #ffffff; }
+
+.apple-trust-card span {
+  display: block;
+  font-size: 0.84rem;
+  font-weight: 700;
+  color: var(--ink-secondary);
+}
+
+/* 2. Menu Bar Popover Showcase (Dr.Buho-inspired Menu Bar Visual) */
+.menubar-visual-frame {
+  background: linear-gradient(135deg, #0f73ee 0%, #0ea5a0 100%);
+  border-radius: 24px;
+  padding: 20px 24px 28px;
+  box-shadow: var(--shadow-card);
+  position: relative;
+  overflow: hidden;
+}
+
+.macos-topbar-strip {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 14px;
+  background-color: rgba(255, 255, 255, 0.22);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 6px 14px;
+  border-radius: 10px;
+  color: #ffffff;
+  font-size: 0.78rem;
+  font-weight: 600;
+  margin-bottom: 14px;
+}
+
+.menubar-active-pill {
+  background-color: rgba(255, 255, 255, 0.95);
+  color: var(--brand-blue);
+  padding: 2px 9px;
+  border-radius: 6px;
+  font-weight: 800;
+}
+
+.menubar-popover-card {
+  max-width: 310px;
+  margin-left: auto;
+  background-color: rgba(255, 255, 255, 0.97);
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: 0 24px 48px -12px rgba(0, 0, 0, 0.25);
+}
+
+.menubar-drive-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background-color: var(--bg-soft);
+  margin-bottom: 8px;
+}
+
+.menubar-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: #16a34a;
+  display: inline-block;
+  margin-right: 6px;
+}
+
+/* 3. 4-Column Payment & Guarantee Cards */
+.guarantee-grid {
+  max-width: 860px;
+  margin: 36px auto 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+
+@media (max-width: 760px) {
+  .guarantee-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.guarantee-card {
+  background-color: #ffffff;
+  border: 1px solid var(--border-soft);
+  border-radius: 16px;
+  padding: 20px 16px;
+  box-shadow: 0 8px 22px -10px rgba(20, 25, 35, 0.06);
+}
+
+.guarantee-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.guarantee-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 9px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.g-amber { background-color: rgba(245, 158, 11, 0.14); color: #b45309; }
+.g-blue  { background-color: rgba(10, 122, 255, 0.12); color: #0a7aff; }
+.g-green { background-color: rgba(16, 185, 129, 0.13); color: #047857; }
+.g-slate { background-color: rgba(100, 116, 139, 0.13); color: #334155; }
+
+.guarantee-head strong {
+  font-size: 0.96rem;
+  font-weight: 800;
+  color: var(--ink-primary);
+}
+
+.guarantee-card p {
+  font-size: 0.82rem;
+  color: var(--ink-muted);
+  line-height: 1.45;
+}
+
+.pay-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-top: 6px;
+}
+
+.pay-chip {
+  font-size: 0.68rem;
+  font-weight: 800;
+  padding: 2px 7px;
+  border-radius: 5px;
+  background-color: var(--bg-soft);
+  color: var(--ink-secondary);
+  border: 1px solid var(--border-soft);
+}
+
 /* FAQ Accordion */
 .faq-list {
   max-width: 780px;

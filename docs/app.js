@@ -64,7 +64,22 @@
       faq2Q: "支援最新的 Apple Silicon (M 系列) 與 Intel Mac 嗎？",
       faq2A: "支援！PureMount 採用原生雙架構編譯，完整相容 macOS 13 Ventura 至最新 macOS 27 的所有 Apple Silicon 與 Intel Mac 機型。",
       faq3Q: "以後換新 Mac 電腦或重灌系統，需要重新購買嗎？",
-      faq3A: "不需要！您的授權綁定於您的購買信箱（官網版可依方案綁定 1 台或 3 台 Mac；App Store 版直接跟隨您的 Apple ID），換新電腦只需輸入信箱與授權碼即可 1 秒恢復 Pro 權限。"
+      faq3A: "不需要！您的授權綁定於您的購買信箱（官網版可依方案綁定 1 台或 3 台 Mac；App Store 版直接跟隨您的 Apple ID），換新電腦只需輸入信箱與授權碼即可 1 秒恢復 Pro 權限。",
+      trustBadge1: "符合 Apple 安全標準",
+      trustBadge2: "支援 macOS 13 – 27",
+      trustBadge3: "Apple Silicon & Intel 執行",
+      trustBadge4: "確保硬碟資料安全",
+      menuBarTitle: "使用「PureMount 選單列」立即管理所有 NTFS 硬碟",
+      menuBarDesc: "無需打開主視窗！點擊 macOS 右上角選單列圖示，即可即時查看所有外接硬碟容量、切換可讀寫模式、在 Finder 中開啟，或一鍵「純淨安全退出」。",
+      menuBarB1: "插入硬碟自動於狀態列顯示數量與讀寫綠燈",
+      menuBarB2: "支援一鍵「全退」，同時淨化並卸載所有外接儲存裝置",
+      gTaxTitle: "價格透明",
+      gTaxDesc: "清楚標示實付金額，無任何隱藏訂閱陷阱",
+      gRefundTitle: "30 天退款保證",
+      gRefundDesc: "先享 1 次免費完整體驗，購買後 30 天內皆可安心退款",
+      gSupportTitle: "24/7 支援",
+      gSupportDesc: "提供 Turbo Integration LLC 專屬電子郵件技術支援",
+      gPayTitle: "安全支付"
     },
     en: {
       navFeatures: "Features",
@@ -129,7 +144,22 @@
       faq2Q: "Does it support Apple Silicon (M-series) and Intel Macs?",
       faq2A: "Yes. PureMount is compiled as a Universal macOS binary supporting macOS 13 Ventura through macOS 27 on both Apple Silicon and Intel Macs.",
       faq3Q: "What happens if I get a new Mac or reinstall macOS?",
-      faq3A: "Your license is tied to your purchase email (1 or 3 Macs on Direct edition, or tied to your Apple ID on the Mac App Store). You can transfer or restore it anytime."
+      faq3A: "Your license is tied to your purchase email (1 or 3 Macs on Direct edition, or tied to your Apple ID on the Mac App Store). You can transfer or restore it anytime.",
+      trustBadge1: "Apple Security Ready",
+      trustBadge2: "Supports macOS 13 – 27",
+      trustBadge3: "Apple Silicon & Intel",
+      trustBadge4: "Data Safety Guaranteed",
+      menuBarTitle: "Manage NTFS Drives Instantly via PureMount Menu Bar",
+      menuBarDesc: "No need to open the main console! Click the Menu Bar icon at the top-right of your Mac to check drive space, toggle Read/Write, open in Finder, or Clean & Eject in one click.",
+      menuBarB1: "Automatically shows mounted drive count and status indicator",
+      menuBarB2: "One-click 'Eject All' to clean and unmount every external drive",
+      gTaxTitle: "Transparent Pricing",
+      gTaxDesc: "No hidden fees or surprise renewal traps",
+      gRefundTitle: "30-Day Money-Back",
+      gRefundDesc: "Includes 1 free full session plus a 30-day refund guarantee",
+      gSupportTitle: "24/7 Support",
+      gSupportDesc: "Dedicated email support by Turbo Integration LLC",
+      gPayTitle: "Secure Checkout"
     }
   };
 

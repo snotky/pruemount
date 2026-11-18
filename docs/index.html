@@ -135,6 +135,39 @@
             </div>
           </div>
         </div>
+
+        <!-- 4-Column Hardware & Apple Trust Badges -->
+        <div class="apple-trust-grid">
+          <div class="apple-trust-card">
+            <div class="trust-badge-icon apple" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                <polyline points="9 12 11 14 15 10"></polyline>
+              </svg>
+            </div>
+            <span data-i18n="trustBadge1">符合 Apple 安全標準</span>
+          </div>
+
+          <div class="apple-trust-card">
+            <div class="trust-badge-icon os" aria-hidden="true">13–27</div>
+            <span data-i18n="trustBadge2">支援 macOS 13 – 27</span>
+          </div>
+
+          <div class="apple-trust-card">
+            <div class="trust-badge-icon chip" aria-hidden="true">M / x64</div>
+            <span data-i18n="trustBadge3">Apple Silicon &amp; Intel 執行</span>
+          </div>
+
+          <div class="apple-trust-card">
+            <div class="trust-badge-icon safe" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+              </svg>
+            </div>
+            <span data-i18n="trustBadge4">確保硬碟資料安全</span>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -209,6 +242,62 @@
               <div style="display: flex; justify-content: space-between; align-items: center; padding-top: 12px; border-top: 1px solid var(--border-soft);">
                 <span style="font-size: 0.84rem; color: var(--ink-muted);">86 Mac ghost files cleaned</span>
                 <span style="font-size: 0.82rem; font-weight: 700; color: var(--brand-teal);">Safe to Eject</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Showcase Row 3: Menu Bar Quick Control -->
+        <div class="showcase-row">
+          <div class="showcase-text">
+            <span class="feature-kicker">Menu Bar Utility</span>
+            <h3 data-i18n="menuBarTitle">使用「PureMount 選單列」立即管理所有 NTFS 硬碟</h3>
+            <p data-i18n="menuBarDesc">無需打開主視窗！點擊 macOS 右上角選單列圖示，即可即時查看所有外接硬碟容量、切換可讀寫模式、在 Finder 中開啟，或一鍵「純淨安全退出」。</p>
+            <ul class="showcase-bullets">
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0a7aff" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span data-i18n="menuBarB1">插入硬碟自動於狀態列顯示數量與讀寫綠燈</span>
+              </li>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0a7aff" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span data-i18n="menuBarB2">支援一鍵「全退」，同時淨化並卸載所有外接儲存裝置</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="menubar-visual-frame" role="img" aria-label="PureMount macOS Menu Bar Preview">
+            <div class="macos-topbar-strip" aria-hidden="true">
+              <span class="menubar-active-pill">PureMount 2</span>
+              <span>Wi-Fi</span>
+              <span>Search</span>
+              <span>Tue 9:41 AM</span>
+            </div>
+
+            <div class="menubar-popover-card">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                <strong style="font-size: 0.92rem;">PureMount</strong>
+                <span style="font-size: 0.72rem; font-weight: 700; color: var(--brand-teal);">Eject All</span>
+              </div>
+
+              <div class="menubar-drive-row">
+                <div>
+                  <div style="font-size: 0.84rem; font-weight: 700;"><span class="menubar-dot"></span>Samsung T7 Shield</div>
+                  <div style="font-size: 0.72rem; color: var(--ink-muted);">NTFS · 1.24 TB free</div>
+                </div>
+                <span style="font-size: 0.72rem; font-weight: 700; color: var(--brand-teal);">Clean &amp; Eject</span>
+              </div>
+
+              <div class="menubar-drive-row" style="margin-bottom: 12px;">
+                <div>
+                  <div style="font-size: 0.84rem; font-weight: 700;"><span class="menubar-dot"></span>SanDisk Extreme SD</div>
+                  <div style="font-size: 0.72rem; color: var(--ink-muted);">exFAT · 198 GB free</div>
+                </div>
+                <span style="font-size: 0.72rem; font-weight: 700; color: var(--brand-teal);">Clean &amp; Eject</span>
+              </div>
+
+              <div style="display: flex; justify-content: space-between; font-size: 0.76rem; color: var(--ink-secondary); padding-top: 8px; border-top: 1px solid var(--border-soft);">
+                <span>Open PureMount Console</span>
+                <span style="color: var(--ink-muted);">Quit</span>
               </div>
             </div>
           </div>
@@ -386,6 +475,69 @@
           <span data-i18n="masNotePrefix">習慣透過 Apple 帳號付款？</span>
           <a href="#pricing" data-link="mas" data-i18n="masNoteLink">前往 Mac App Store 下載（US$ 3.99/年 · US$ 12.99 買斷）&rsaquo;</a>
         </p>
+
+        <!-- 4-Column Payment & Refund Guarantee Cards -->
+        <div class="guarantee-grid">
+          <div class="guarantee-card">
+            <div class="guarantee-head">
+              <span class="guarantee-icon g-amber" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                  <circle cx="12" cy="12" r="9"></circle>
+                  <path d="M14.5 9a3 3 0 0 0-5 1c0 2 5 1.5 5 3.5a3 3 0 0 1-5 1"></path>
+                  <line x1="12" y1="6" x2="12" y2="18"></line>
+                </svg>
+              </span>
+              <strong data-i18n="gTaxTitle">價格透明</strong>
+            </div>
+            <p data-i18n="gTaxDesc">清楚標示實付金額，無任何隱藏訂閱陷阱</p>
+          </div>
+
+          <div class="guarantee-card">
+            <div class="guarantee-head">
+              <span class="guarantee-icon g-blue" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                  <rect x="3" y="4" width="18" height="18" rx="3"></rect>
+                  <line x1="16" y1="2" x2="16" y2="6"></line>
+                  <line x1="8" y1="2" x2="8" y2="6"></line>
+                  <line x1="3" y1="10" x2="21" y2="10"></line>
+                </svg>
+              </span>
+              <strong data-i18n="gRefundTitle">30 天退款保證</strong>
+            </div>
+            <p data-i18n="gRefundDesc">先享 1 次免費完整體驗，購買後 30 天內皆可安心退款</p>
+          </div>
+
+          <div class="guarantee-card">
+            <div class="guarantee-head">
+              <span class="guarantee-icon g-green" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                  <path d="M3 18v-6a9 9 0 0 1 18 0v6"></path>
+                  <path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"></path>
+                </svg>
+              </span>
+              <strong data-i18n="gSupportTitle">24/7 支援</strong>
+            </div>
+            <p data-i18n="gSupportDesc">提供 Turbo Integration LLC 專屬電子郵件技術支援</p>
+          </div>
+
+          <div class="guarantee-card">
+            <div class="guarantee-head">
+              <span class="guarantee-icon g-slate" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                  <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                  <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                </svg>
+              </span>
+              <strong data-i18n="gPayTitle">安全支付</strong>
+            </div>
+            <div class="pay-badges" aria-label="Accepted Payment Methods">
+              <span class="pay-chip">VISA</span>
+              <span class="pay-chip">Mastercard</span>
+              <span class="pay-chip">Apple Pay</span>
+              <span class="pay-chip">Stripe</span>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
