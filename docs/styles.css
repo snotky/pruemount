@@ -979,34 +979,3 @@ tbody th {
   font-size: 0.88rem;
   color: var(--ink-muted);
 }
-
-/* Generated Product Showcase Images */
-.hero-image-frame {
-  max-width: 900px;
-  margin: 0 auto;
-  border-radius: 24px;
-  overflow: hidden;
-  box-shadow: var(--shadow-window);
-  border: 1px solid var(--border-soft);
-  background-color: #ffffff;
-}
-
-.hero-image-frame img {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-
-.feature-image-frame {
-  border-radius: 22px;
-  overflow: hidden;
-  box-shadow: var(--shadow-card);
-  border: 1px solid var(--border-soft);
-  background-color: #ffffff;
-}
-
-.feature-image-frame img {
-  display: block;
-  width: 100%;
-  height: auto;
-}
