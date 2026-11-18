@@ -695,6 +695,67 @@ tbody th {
   gap: 8px;
 }
 
+/* Dr.Buho-style Device Seat Switcher (1 Mac vs 3 Macs) */
+.seat-toggle-wrap {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 34px;
+}
+
+.seat-toggle-bar {
+  display: inline-flex;
+  padding: 5px;
+  border-radius: 999px;
+  background-color: #ffffff;
+  border: 1px solid var(--border-soft);
+  box-shadow: 0 4px 14px rgba(20, 25, 35, 0.05);
+  gap: 4px;
+}
+
+.seat-toggle-btn {
+  border: none;
+  background: transparent;
+  padding: 9px 22px;
+  border-radius: 999px;
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--ink-secondary);
+  cursor: pointer;
+  transition: background-color 0.16s ease, color 0.16s ease;
+}
+
+.seat-toggle-btn.active {
+  background-color: var(--brand-blue);
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(10, 122, 255, 0.3);
+}
+
+.mas-dual-note {
+  text-align: center;
+  margin-top: 28px;
+  font-size: 0.9rem;
+  color: var(--ink-secondary);
+}
+
+.mas-dual-note a {
+  color: var(--brand-blue);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.mas-dual-note a:hover {
+  text-decoration: underline;
+}
+
+.pure-series-tag {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--brand-teal);
+  background-color: rgba(14, 165, 160, 0.1);
+  padding: 2px 8px;
+  border-radius: 999px;
+}
+
 /* FAQ Accordion */
 .faq-list {
   max-width: 780px;

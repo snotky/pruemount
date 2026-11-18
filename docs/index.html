@@ -21,6 +21,7 @@
           </svg>
         </span>
         <span>PureMount</span>
+        <span class="pure-series-tag">PureApps</span>
       </a>
 
       <nav class="nav-links" aria-label="Primary">
@@ -49,7 +50,7 @@
         </div>
 
         <div class="hero-version-pill">
-          <span data-i18n="eyebrow">v1.0.0 · 支援 macOS 13 Ventura / 14 Sonoma / 15 Sequoia+ · Apple Silicon &amp; Intel</span>
+          <span data-i18n="eyebrow">v1.0.0 · 支援 macOS 13 – 27 · Apple Silicon 與 Intel 原生架構</span>
         </div>
 
         <h1 data-i18n="heroTitle">讓每一顆 Windows 硬碟，在 Mac 上如原生般自由讀寫。</h1>
@@ -258,7 +259,7 @@
             <tbody>
               <tr>
                 <th data-i18n="rowPrice">終身買斷價格</th>
-                <td><strong style="color: var(--brand-blue);">US$ 9.99 (最多 3 台 Mac)</strong></td>
+                <td><strong style="color: var(--brand-blue);">US$ 9.99 (1 台) / US$ 14.99 (3 台)</strong></td>
                 <td>US$ 29.95 (單機)</td>
                 <td>US$ 15.00</td>
               </tr>
@@ -301,18 +302,26 @@
     <!-- 4. Pricing Section -->
     <section id="pricing" class="section section-soft">
       <div class="container">
-        <div class="section-head">
+        <div class="section-head" style="margin-bottom: 32px;">
           <h2 data-i18n="pricingTitle">簡單透明的定價，一次投資永久省心</h2>
-          <p data-i18n="pricingSub">您可以先免費下載測試您的硬碟，滿意後再選擇最適合您的授權方案。</p>
+          <p data-i18n="pricingSub">官網直購享專屬優惠價（比 Mac App Store 更划算），先免費試用滿意再購買。</p>
+        </div>
+
+        <!-- Dr.Buho-style 1 Mac vs 3 Macs Switcher -->
+        <div class="seat-toggle-wrap">
+          <div class="seat-toggle-bar" role="group" aria-label="Select Device Count">
+            <button type="button" class="seat-toggle-btn active" data-seat="1mac" data-i18n="seat1Mac">1 台 Mac（個人版）</button>
+            <button type="button" class="seat-toggle-btn" data-seat="3macs" data-i18n="seat3Macs">3 台 Mac（多機 / 工作室推薦）</button>
+          </div>
         </div>
 
         <div class="pricing-grid">
           <article class="pricing-card featured">
             <div>
-              <span class="plan-pill" data-i18n="lifetimeBadge">最受歡迎 · 省下 70% 費用</span>
+              <span class="plan-pill" data-i18n="lifetimeBadge">官網直購優惠 · 省下 App Store 抽成</span>
               <h3 style="font-size: 1.45rem; font-weight: 800;" data-i18n="lifetimeTitle">終身買斷版 (Lifetime Pro)</h3>
-              <div class="price-tag">US$ 9.99</div>
-              <p style="font-size: 0.9rem; color: var(--ink-muted);" data-i18n="lifetimeDesc">一次付費永久擁有，無任何續訂費用</p>
+              <div class="price-tag" id="price-lifetime">US$ 9.99</div>
+              <p style="font-size: 0.9rem; color: var(--ink-muted);" id="desc-lifetime" data-i18n="lifetimeDesc">一次付費永久擁有（1 台 Mac 授權），無任何續訂費用</p>
 
               <ul class="price-features">
                 <li>
@@ -329,7 +338,7 @@
                 </li>
                 <li>
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0a7aff" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                  <span data-i18n="lifetimeF4">同一個購買信箱可同時綁定最多 3 台 Mac 電腦</span>
+                  <span id="seat-feature-lifetime" data-i18n="lifetimeF4">購買信箱自動綁定 1 台 Mac（換機可線上解綁轉移）</span>
                 </li>
                 <li>
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0a7aff" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
@@ -338,7 +347,7 @@
               </ul>
             </div>
 
-            <a href="#pricing" data-link="checkout-lifetime" class="btn btn-blue" style="width: 100%;" data-i18n="lifetimeBtn">
+            <a href="#pricing" id="btn-checkout-lifetime" class="btn btn-blue" style="width: 100%;" data-i18n="lifetimeBtn">
               立即購買終身買斷版 — US$ 9.99
             </a>
           </article>
@@ -347,8 +356,8 @@
             <div>
               <span class="plan-pill" data-i18n="annualBadge">輕量入門方案</span>
               <h3 style="font-size: 1.45rem; font-weight: 800;" data-i18n="annualTitle">年度授權版 (Annual Pro)</h3>
-              <div class="price-tag">US$ 2.99 <small style="font-size: 1rem; font-weight: 600;">/ yr</small></div>
-              <p style="font-size: 0.9rem; color: var(--ink-muted);" data-i18n="annualDesc">約 NT$ 90 / 年（平均每月不到 NT$ 8），隨時可取消</p>
+              <div class="price-tag" id="price-annual">US$ 2.99 <small style="font-size: 1rem; font-weight: 600;">/ yr</small></div>
+              <p style="font-size: 0.9rem; color: var(--ink-muted);" id="desc-annual" data-i18n="annualDesc">約 NT$ 90 / 年（平均每月不到 NT$ 8），隨時可取消</p>
 
               <ul class="price-features">
                 <li>
@@ -357,7 +366,7 @@
                 </li>
                 <li>
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0a7aff" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                  <span data-i18n="annualF2">支援綁定最多 3 台 Mac 電腦</span>
+                  <span id="seat-feature-annual" data-i18n="annualF2">支援綁定 1 台 Mac 電腦</span>
                 </li>
                 <li>
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0a7aff" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
@@ -366,11 +375,17 @@
               </ul>
             </div>
 
-            <a href="#pricing" data-link="checkout-annual" class="btn btn-dark" style="width: 100%;" data-i18n="annualBtn">
+            <a href="#pricing" id="btn-checkout-annual" class="btn btn-dark" style="width: 100%;" data-i18n="annualBtn">
               訂閱年度方案 — US$ 2.99 / 年
             </a>
           </article>
         </div>
+
+        <!-- Dual-Track App Store Alternative Note -->
+        <p class="mas-dual-note">
+          <span data-i18n="masNotePrefix">習慣透過 Apple 帳號付款？</span>
+          <a href="#pricing" data-link="mas" data-i18n="masNoteLink">前往 Mac App Store 下載（US$ 3.99/年 · US$ 12.99 買斷）&rsaquo;</a>
+        </p>
       </div>
     </section>
 
@@ -390,16 +405,16 @@
           </details>
 
           <details class="faq-details">
-            <summary data-i18n="faq2Q">支援最新的 Apple Silicon (M1 / M2 / M3 / M4) 與舊款 Intel Mac 嗎？</summary>
+            <summary data-i18n="faq2Q">支援最新的 Apple Silicon (M 系列) 與 Intel Mac 嗎？</summary>
             <p data-i18n="faq2A">
-              支援！PureMount 採用 Universal 原生雙架構編譯，支援 macOS 13 Ventura、macOS 14 Sonoma 與最新 macOS 15 Sequoia 以上的所有 Mac 機型。
+              支援！PureMount 採用原生雙架構編譯，完整相容 macOS 13 Ventura 至最新 macOS 27 的所有 Apple Silicon 與 Intel Mac 機型。
             </p>
           </details>
 
           <details class="faq-details">
             <summary data-i18n="faq3Q">以後換新 Mac 電腦或重灌系統，需要重新購買嗎？</summary>
             <p data-i18n="faq3A">
-              不需要！您的授權綁定於您的購買信箱（官網版最多可綁 3 台 Mac；App Store 版直接跟隨您的 Apple ID），換新電腦只需輸入信箱與授權碼即可 1 秒恢復 Pro 權限。
+              不需要！您的授權綁定於您的購買信箱（官網版可依方案綁定 1 台或 3 台 Mac；App Store 版直接跟隨您的 Apple ID），換新電腦只需輸入信箱與授權碼即可 1 秒恢復 Pro 權限。
             </p>
           </details>
         </div>
@@ -409,7 +424,8 @@
 
   <footer class="site-footer">
     <div class="container">
-      <p>Copyright &copy; 2026 PureMount. Built for macOS 13.0+.</p>
+      <p style="margin-bottom: 6px;">PureMount by <strong>PureApps</strong> &middot; Built for macOS 13 &ndash; 27</p>
+      <p>Copyright &copy; 2026 Turbo Integration LLC. All Rights Reserved.</p>
     </div>
   </footer>
 
