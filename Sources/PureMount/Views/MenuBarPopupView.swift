@@ -88,8 +88,9 @@ public struct MenuBarPopupView: View {
             // 3. 底部極簡控制列
             HStack {
                 Button {
-                    NSApp.activate(ignoringOtherApps: true)
+                    NSApp.setActivationPolicy(.regular)
                     openWindow(id: "main-console")
+                    NSApp.activate(ignoringOtherApps: true)
                 } label: {
                     Label(l10n.openMainWindow, systemImage: "macwindow")
                         .font(.system(size: 12, weight: .medium))

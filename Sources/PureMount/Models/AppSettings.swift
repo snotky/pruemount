@@ -1,5 +1,6 @@
 import Foundation
 import SwiftUI
+import AppKit
 import ServiceManagement
 
 /// 全域偏好設定與狀態管理（支援 macOS 13+）
@@ -55,6 +56,16 @@ public final class AppSettings: ObservableObject {
         }
     }
 
+    /// 關閉主控台視窗後隱藏下方 Dock 圖示，僅常駐右上角選單列
+    @Published public var hideDockWhenClosed: Bool {
+        didSet {
+            UserDefaults.standard.set(hideDockWhenClosed, forKey: "pm.hideDockWhenClosed")
+            if !hideDockWhenClosed {
+                NSApp.setActivationPolicy(.regular)
+            }
+        }
+    }
+
     /// 控制偏好設定視窗顯示狀態
     @Published public var isShowingSettings: Bool = false
 
@@ -67,9 +78,9 @@ public final class AppSettings: ObservableObject {
         if let savedLang, let parsed = AppLanguage(rawValue: savedLang) {
             self.language = parsed
         } else {
-            // 自動偵測系統語言，預設繁體中文
-            let preferred = Locale.preferredLanguages.first ?? "zh-Hant"
-            self.language = preferred.hasPrefix("en") ? .english : .zhHant
+            // 自動偵測系統語言：中文系統顯示繁體中文；英文、日文及其他語言一律顯示英文
+            let preferred = (Locale.preferredLanguages.first ?? "").lowercased()
+            self.language = preferred.hasPrefix("zh") ? .zhHant : .english
         }
 
         #if DISTRIBUTION_MAS
@@ -90,6 +101,7 @@ public final class AppSettings: ObservableObject {
         self.sleepGuardEnabled = UserDefaults.standard.object(forKey: "pm.sleepGuardEnabled") as? Bool ?? true
         self.launchAtLogin = UserDefaults.standard.object(forKey: "pm.launchAtLogin") as? Bool ?? false
         self.showInternalDrives = UserDefaults.standard.object(forKey: "pm.showInternalDrives") as? Bool ?? true
+        self.hideDockWhenClosed = UserDefaults.standard.object(forKey: "pm.hideDockWhenClosed") as? Bool ?? true
     }
 
     public func toggleLanguage() {

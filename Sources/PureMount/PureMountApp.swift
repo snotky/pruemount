@@ -1,11 +1,47 @@
 import SwiftUI
 import AppKit
 
-/// 應用程式生命週期代理（確保啟動時正常顯示視窗與狀態列圖示）
+/// 應用程式生命週期代理（支援常駐右上角選單列與自動隱藏 Dock 圖示）
 public final class PureMountAppDelegate: NSObject, NSApplicationDelegate {
+    private var windowCloseObserver: NSObjectProtocol?
+
+    @MainActor
     public func applicationDidFinishLaunching(_ notification: Notification) {
         NSApp.setActivationPolicy(.regular)
         NSApp.activate(ignoringOtherApps: true)
+
+        windowCloseObserver = NotificationCenter.default.addObserver(
+            forName: NSWindow.willCloseNotification,
+            object: nil,
+            queue: .main
+        ) { notification in
+            guard let closedWindow = notification.object as? NSWindow else { return }
+            Task { @MainActor in
+                PureMountAppDelegate.handleWindowWillClose(closedWindow)
+            }
+        }
+    }
+
+    @MainActor
+    private static func handleWindowWillClose(_ closedWindow: NSWindow) {
+        guard AppSettings.shared.hideDockWhenClosed else { return }
+        // 僅在一般主視窗關閉且無其他可見主視窗時隱藏 Dock 圖示，MenuBarExtra 不受影響
+        let hasOtherVisibleMainWindow = NSApp.windows.contains { window in
+            window !== closedWindow
+                && window.isVisible
+                && window.canBecomeMain
+                && !window.className.contains("MenuBarExtra")
+        }
+        if !hasOtherVisibleMainWindow && closedWindow.canBecomeMain {
+            NSApp.setActivationPolicy(.accessory)
+        }
+    }
+
+    @MainActor
+    public func applicationShouldHandleReopen(_ sender: NSApplication, hasVisibleWindows flag: Bool) -> Bool {
+        NSApp.setActivationPolicy(.regular)
+        NSApp.activate(ignoringOtherApps: true)
+        return true
     }
 
     public func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool {

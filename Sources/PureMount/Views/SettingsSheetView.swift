@@ -58,6 +58,12 @@ public struct SettingsSheetView: View {
                     isOn: $settings.showInternalDrives
                 )
                 .font(.system(size: 13))
+
+                Toggle(
+                    isZh ? "關閉視窗時隱藏 Dock 圖示（常駐右上角）" : "Hide Dock Icon When Closed (Menu Bar Only)",
+                    isOn: $settings.hideDockWhenClosed
+                )
+                .font(.system(size: 13))
             }
             .padding(14)
             .background(
@@ -77,9 +83,9 @@ public struct SettingsSheetView: View {
                 )
 
                 driverRow(
-                    title: "macFUSE Core",
-                    isAvailable: env.hasMacFUSE,
-                    detail: env.hasMacFUSE ? "Active" : "Standard Mode"
+                    title: isZh ? "無核心擴充引擎 (FUSE-T / macFUSE)" : "User-Space Driver (FUSE-T / macFUSE)",
+                    isAvailable: env.goNfsv4Path != nil || env.hasMacFUSE,
+                    detail: env.hasMacFUSE ? "macFUSE Active" : (env.goNfsv4Path != nil ? "Built-in FUSE-T" : "Standard Mode")
                 )
 
                 driverRow(
